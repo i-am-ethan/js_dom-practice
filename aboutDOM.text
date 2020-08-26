@@ -1,0 +1,37 @@
+DOMのよくある流れ
+
+１、変化させたい要素を指定する
+    
+    指定する方法
+
+    １、getElementById('id'); =>スピードが早い
+
+    ２、document.querySelector() =>万能
+    
+    ３、document.querySelectorAll()　＝＞万能
+
+
+
+２、イベントを指定する
+
+    el.addEventListener(event, callback);
+
+    event・・・click, keydown, changeなど
+
+    callbackはアロー関数で。
+    () => {}
+
+
+３、処理を書く => イベントリスナーのcallback関数内に処理を書く
+
+    HTML要素を追加
+    el.createElement('div')・・・作って
+    el.appendChild / el.removeChild・・くっつける
+
+    HTML / 文字追加 el.innerHTML / el.textContent
+
+    classをつけたり
+    el.classList.add('class')/
+    el.classList.remove('class')
+
+
