@@ -22,6 +22,9 @@ DOMのよくある流れ
     () => {}
 
 
+    イベントリスナーが一般的
+
+
 ３、処理を書く => イベントリスナーのcallback関数内に処理を書く
 
     HTML要素を追加
@@ -33,5 +36,18 @@ DOMのよくある流れ
     classをつけたり
     el.classList.add('class')/
     el.classList.remove('class')
+
+
+
+作ったタグを生成するための考え方　＝＞要素追加とDOMツリー
+
+    よく使われるメソッド
+
+    appemdChild()
+
+
+
+
+バブリングとキャプチャリング
 
 

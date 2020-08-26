@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,36 +16,44 @@
     </style>
 </head>
 <body>
-    <div id="grand-father">
-        <div id="parent">
-            <div id="target">
-                自分
-            </div>
-        </div>
-        <div id="divList">
-            <div class="div1">テスト1</div>
-            <div class="div2">テスト2</div>
-            <div class="div3">テスト3</div>
-        </div>
-    </div>
+
+    <div id="test"></div>
+    <!-- <button id="target" onclick="change_color()">押してね</button> -->
+    <button id="target">押してね</button>
 
     <script>
+
+        //1つめ：HTMLタグにonclickと設定する
+        // function change_color(){
+        //     const test = document.getElementById('test');
+        //     test.textContent = 'テスト';
+        //     test.classList.add('red');
+        // }
+        
+
+        //２つ目：JSで設定　Element.onclick
+        // document.getElementById('target').onclick = function(){
+        //     const test = document.getElementById('test');
+        //     test.textContent = 'テスト';
+        //     test.classList.add('red');
+        // }
+
+        //上記２つはイベントハンドラと呼ばれる：複数イベントを設定できないのが問題とされている
+
+        //３つ目：イベントリスナー　＝＞　複数追加できる
+
         const target = document.getElementById('target');
-        const newDiv = document.createElement('div');
-        newDiv.id = 'test';
-        newDiv.classList.add('red');
-        newDiv.textContent = 'テスト';
-        // target.appendChild(newDiv);
-        target.parentNode.appendChild(newDiv);
+        //イベントリスナーは引数が３つとる：１つ目はイベントの種類、２つ目はcallback関数、３つ目はオプション
+        target.addEventListener('click', (e) => {
+            console.log(e);
+            const test = document.getElementById('test');
+            test.textContent = 'テスト';
+            test.classList.add('red');
+        });
 
-        const targetList = document.getElementById('divList');
-        const reference = document.querySelector('.div2');
-        const newElement = document.createElement('div');
 
-        newElement.classList.add('div4');
-        newElement.textContent = '追加分';
-        targetList.insertBefore(newElement, reference);
 
     </script>
 </body>
 </html>
+
